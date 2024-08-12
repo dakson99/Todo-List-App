@@ -92,3 +92,61 @@ body {
 .task.task.selected .radio .icon {
     opacity: 1;
 }
+
+.task .right {
+    flex: 1;
+}
+
+.task .title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.task .description {
+    font-size: 14px;
+    color: #333;
+}
+
+.task .info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 12px;
+    color: #8a8d9b;
+    margin-top: 10px;
+}
+
+.task .info.expired {
+    color: #f00;
+}
+
+.task .info .dot {
+    font-size: 5px;
+    color: #ddd;
+}
+
+.task-wrapper .delete {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    bottom: 220px;
+    color: #bfc1ce;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.task-wrapper .delete:hover {
+    color: #f00;
+    border-color: #f00;
+}
+
+.task-wrapper .delete.show {
+    display: flex;
+}
