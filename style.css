@@ -29,7 +29,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #fff;
-    border: 10px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -149,4 +149,39 @@ body {
 
 .task-wrapper .delete.show {
     display: flex;
+}
+
+.add-wrapper {
+    width: 110%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-wrapper .details {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.add-wrapper .details input,
+.add-wrapper .details textarea {
+    font-size: 12px;
+    color: #333;
+}
+
+.add-wrapper .details input::placeholder,
+.add-wrapper .details textarea::placeholder {
+    color: #bfc1ce;
+}
+
+.add-wrapper .details input {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.add-wrapper .details textarea {
+    resize: none;
+    height: 100px;
 }
