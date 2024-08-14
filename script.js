@@ -12,25 +12,25 @@ let tasksArr = [
     {
         title: "Task 1",
         description: "Task 1 description",
-        date: "14 Avg 2024",
+        date: "2024 08 15",
         time: "16:10",
     },
     {
         title: "Task 2",
         description: "Task 2 description",
-        date: "14 Avg 2024",
+        date: "2024 08 15",
         time: "16:10",
     },
     {
         title: "Task 3",
         description: "Task 3 description",
-        date: "14 Avg 2024",
+        date: "2024 08 15",
         time: "16:10",
     },
     {
         title: "Task 4",
         description: "Task 4 description",
-        date: "14 Avg 2024",
+        date: "2022 08 15",
         time: "16:10",
     },
 ]
@@ -52,6 +52,33 @@ function renderTasks() {
         //check if expired
         let expired;
         expired = checkExpired(task) ? "expired" : "";
+
+        tasksWrapper.innerHTML += `
+                    <div class="task ">
+                <div class="left">
+                    <div class="radio">
+                        <ion-icon class="icon" name="checkmark"></ion-icon>
+                    </div>
+                </div>
+                <div class="right">
+                    <p class="title">${task.title}</p>
+                    <p class="description">${task.description}</p>
+                    <div class="info ${expired}">
+                        <p class="date">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                            <span>${task.date}</span>
+                        </p>
+                        <p class="dot">
+                            <ion-icon name="ellipse"></ion-icon>
+                        </p>
+                        <p class="time">
+                            <ion-icon name="time-outline"></ion-icon>
+                            <span>${task.time}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        `;
     });
 
 }
