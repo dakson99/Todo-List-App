@@ -252,3 +252,31 @@ body {
 .footer .btn.add {
     background-color: var(--primary-color);
 }
+
+/* media queries*/
+@media screen and (max-width: 670px) {
+    body {
+        display: block;
+    }
+
+    .container {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .add-wrapper {
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .task-wrapper .delete {
+        bottom: 280px;
+    }
+
+    .add-wrapper .footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
