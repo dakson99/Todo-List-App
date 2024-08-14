@@ -151,6 +151,13 @@ body {
     display: flex;
 }
 
+.task-wrapper .no-tasks {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .add-wrapper {
     width: 110%;
     padding: 20px;
