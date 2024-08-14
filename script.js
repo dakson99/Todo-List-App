@@ -81,6 +81,19 @@ function renderTasks() {
         `;
     });
 
+    //add event listeners
+
+    const tasks = document.querySelectorAll(".task");
+
+    tasks.forEach((task) => {
+        task.addEventListener("click", (e) => {
+            //if radio checked
+            if (e.target.classList.contains("radio")) {
+                task.classList.toggle("selected");
+            }
+        });
+    });
+
 }
 
 renderTasks();
