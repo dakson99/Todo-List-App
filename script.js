@@ -81,6 +81,11 @@ function renderTasks() {
         `;
     });
 
+    tasksWrapper.innerHTML += `
+    <div class="delete ">
+                <ion-icon name="trash-outline"></ion-icon>
+            </div>`;
+
     //add event listeners
 
     const tasks = document.querySelectorAll(".task");
@@ -90,6 +95,12 @@ function renderTasks() {
             //if radio checked
             if (e.target.classList.contains("radio")) {
                 task.classList.toggle("selected");
+                //show delete button when at leaset one tasks selected
+                if (document.querySelector(".task.selected")) {
+                    document.querySelector(".delete").classList.add("show");
+                } else {
+                    document.querySelector(".delete").classList.remove("show");
+                }
             }
         });
     });
