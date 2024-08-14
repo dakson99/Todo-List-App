@@ -45,7 +45,25 @@ function renderTasks() {
         tasksWrapper.innerHTML = `<div class="no-tasks">No tasks, Add one now</div>`;
         return;
     }
+
+    //if tasks add has tasks
+
+    tasksArr.forEach((task) => {
+        //check if expired
+        let expired;
+        expired = checkExpired(task) ? "expired" : "";
+    });
+
 }
 
 renderTasks();
 
+function checkExpired(task) {
+    let date = new Date(task.date);
+    let time = new Date(task.time);
+    let now = new Date();
+    if (date < now || time < now) {
+        return true;
+    }
+    return false;
+}
