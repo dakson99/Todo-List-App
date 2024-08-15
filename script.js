@@ -12,19 +12,19 @@ let tasksArr = [
     {
         title: "Task 1",
         description: "Task 1 description",
-        date: "2024 08 15",
+        date: "2024 08 25",
         time: "16:10",
     },
     {
         title: "Task 2",
         description: "Task 2 description",
-        date: "2024 08 15",
+        date: "2024 08 25",
         time: "16:10",
     },
     {
         title: "Task 3",
         description: "Task 3 description",
-        date: "2024 08 15",
+        date: "2024 08 25",
         time: "16:10",
     },
     {
@@ -138,3 +138,49 @@ function deleteTasks() {
         renderTasks();
     }
 }
+
+const addTaskForm = document.getElementById("add-task-form"),
+    titleElem = document.getElementById("title"),
+    descriptionElem = document.getElementById("description"),
+    dateElem = document.getElementById("date"),
+    timeElem = document.getElementById("time");
+
+addTaskForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let title = titleElem.value,
+        description = descriptionElem.value,
+        date = dateElem.value,
+        time = timeElem.value;
+    //validate
+    if (title === "" || description === "" || date === "" || time === "") {
+        alert("please fill all the fields");
+    }
+
+    let task = {
+        title,
+        description,
+        date,
+        time,
+    };
+
+    //push in arr
+    tasksArr.push(task);
+    //rerender arr
+    renderTasks();
+    //clear after adding
+    clear();
+});
+
+function clear() {
+    titleElem.value = "";
+    descriptionElem.value = "";
+    dateElem.value = "";
+    timeElem.value = "";
+
+    dateElem.nextElementSibling.innerHTML = "due date";
+    titleElem.nextElementSibling.innerHTML = "due time";
+}
+
+//clear on clear btn
+const clearBtn = document.querySelector(".clear");
+clearBtn.addEventListener("click", clear);
