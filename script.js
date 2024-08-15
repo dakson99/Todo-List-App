@@ -105,6 +105,10 @@ function renderTasks() {
         });
     });
 
+    //on delete remove task from arr and rerender
+    const deleteBtn = document.querySelector(".delete");
+    deleteBtn.addEventListener("click", deleteTasks);
+
 }
 
 renderTasks();
@@ -117,4 +121,20 @@ function checkExpired(task) {
         return true;
     }
     return false;
+}
+
+function deleteTasks() {
+    const selectedTasks = document.querySelectorAll(".task.selected");
+    if (selectedTasks.length === 0)
+        return;
+    //if some taks selected
+    let confirmDelete = confirm("Are you sure you want do delete slected tasks");
+    if (confirmDelete) {
+        selectedTasks.forEach((task) => {
+            //get title of task and filter matching title tasks
+            let title = task.querySelector(".title").innerHTML;
+            tasksArr = tasksArr.filter((task) => task.title != title);
+        });
+        renderTasks();
+    }
 }
